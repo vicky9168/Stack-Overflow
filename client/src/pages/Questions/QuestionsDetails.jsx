@@ -14,12 +14,79 @@ import {deleteQuestion, postAnswer, voteQuestion} from '../../actions/question'
 const QuestionsDetails = () => {
   const { id } = useParams();
   const questionList = useSelector((state)=>(state.questionsReducer))
+  // console.log(questionList);
+  // var questionList = [
+  //   {
+  //     _id: "1",
+  //     votes: 3,
+  //     upVotes: 3,
+  //     downVotes: 2,
+  //     noOfAnswers: 2,
+  //     questionTitle: "What is a function?",
+  //     questionBody: "It meant to be",
+  //     questionTags: ["java", "node js", "react js", "mongoDB"],
+  //     userId: 1,
+  //     userPosted: "mano",
+  //     askedOn: "jan 1",
+  //     answer: [
+  //       {
+  //         answerBody: "Answer",
+  //         userAnswered: "kumar",
+  //         answeredOn: "jan 2",
+  //         userId: 2,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     _id: "2",
+  //     votes: 0,
+  //     upVotes: 3,
+  //     downVotes: 2,
+  //     noOfAnswers: 0,
+  //     questionTitle: "What is a function?",
+  //     questionBody: "It meant to be",
+  //     questionTags: ["javascript", "A", "python"],
+  //     userId: 1,
+  //     userPosted: "mano",
+  //     askedOn: "jan 1",
+  //     answer: [
+  //       {
+  //         answerBody: "Answer",
+  //         userAnswered: "kumar",
+  //         answeredOn: "jan 2",
+  //         userId: 2,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     _id: "3",
+  //     votes: 1,
+  //     upVotes: 3,
+  //     downVotes: 2,
+  //     noOfAnswers: 0,
+  //     questionTitle: "What is a function?",
+  //     questionBody: "It meant to be",
+  //     questionTags: ["javascript", "A", "python"],
+  //     userId: 1,
+  //     userPosted: "mano",
+  //     askedOn: "jan 1",
+  //     answer: [
+  //       {
+  //         answerBody: "Answer",
+  //         userAnswered: "kumar",
+  //         answeredOn: "jan 2",
+  //         userId: 2,
+  //       },
+  //     ],
+  //   },
+  // ];
 const Navigate=useNavigate();
 const dispatch=useDispatch();
 const [Answer, setAnswer] = useState('')
 const User=useSelector((state)=>(state.currentUserReducer));
 const location=useLocation();
-const url='https://Stack-Overflow-Clone-1.cyclic.app'
+// console.log(location);
+const url='http://localhost:3000'
 
 const handlePostAns=(e,answerLength)=>{
   e.preventDefault()
