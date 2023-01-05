@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API=axios.create({baseURL:'http://localhost:5000/'})
+const API=axios.create({baseURL:'http://localhost:5000'})
 
 API.interceptors.request.use((req)=>{
     if(localStorage.getItem('Profile')){
@@ -15,7 +15,7 @@ export const signUp=(authData)=> API.post('/user/signup',authData);
 export const postQuestion = (questionData)=> API.post('/questions/Ask',questionData)
 export const getAllQuestions = ()=> API.get('/questions/get');//This URL get the data from database
 export const deleteQuestion=(id)=> API.delete(`/questions/delete/${id}`)
-export const voteQuestion =(id, value)=>API.patch(`question/vote/${id}`,{value})
+export const voteQuestion =(id, value)=>API.patch(`questions/vote/${id}`,{value})
 
 export const postAnswer = (id,noOfAnswers, answerBody, userAnswered, userId)=>API.patch(`/answer/post/${id}`,{noOfAnswers, answerBody, userAnswered, userId})
 export const deleteAnswer = (id,answerId,noOfAnswers)=>API.patch(`/answer/delete/${id}`,{answerId,noOfAnswers})

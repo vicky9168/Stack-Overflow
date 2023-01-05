@@ -14,9 +14,6 @@ const Questions = () => {
       <RightSidebar />
       </div>
     </div>
-    // <div>
-    //     <Home />
-    // </div>
   )
 }
 
